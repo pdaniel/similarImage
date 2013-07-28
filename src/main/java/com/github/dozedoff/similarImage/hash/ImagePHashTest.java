@@ -17,10 +17,13 @@
  */
 package com.github.dozedoff.similarImage.hash;
 
+import static org.junit.Assert.assertThat;
+
 import java.io.InputStream;
 
 import magick.MagickException;
 
+import org.hamcrest.CoreMatchers;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -41,6 +44,7 @@ public class ImagePHashTest {
 	@Test
 	public void testGetLongHashInputStream() throws Exception {
 		long pHash = iph.getLongHash(is);
+		assertThat(pHash, CoreMatchers.is(991407804753182L));
 	}
 
 	@Test
